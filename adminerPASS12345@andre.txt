@@ -1,0 +1,3 @@
+adminerPASS12345@andre
+adminer
+freelancodb

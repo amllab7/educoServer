@@ -1,0 +1,59 @@
+
+
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^www\.nazapps\.com$
+ 
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+
+
+  
+ 
+RewriteRule ^''$ ?paginate=home&routing=home [L]
+RewriteRule ^home?$ ?paginate=home&routing=home [L]
+RewriteRule ^login?$ ?paginate=login&routing=login [L]
+RewriteRule ^blogs?$ ?paginate=blogs&routing=blogs [L]
+RewriteRule ^contact?$ ?paginate=contact&routing=contact [L]
+RewriteRule ^abouts?$ ?paginate=theabout&routing=theabout [L]
+RewriteRule ^inscription?$ ?paginate=inscription&routing=inscription [L]
+RewriteRule ^explorer?$ ?paginate=explorer&routing=explorer [L]
+RewriteRule ^resetApp?$ ?paginate=resetApp&routing=resetApp [L]
+
+
+
+
+
+
+
+
+
+
+
+
+RewriteRule ^admin/([a-z,=,_,-,@,0-9,A-Z]+)?$ ?paginate=$1&routing=admin [L]
+ 
+RewriteRule ^postlog?$ ?paginate=apiexec&routing=home
+RewriteRule ^logout?$ ?paginate=deconnexion&routing=deconnexion [L]
+RewriteRule ^admin/([a-z]+)/([a-z,=,_,@,0-9,A-Z]+)?$ ?paginate=$1&user=$2 [L]
+
+
+RewriteRule ^api/([a-z,=,_,@,0-9,A-Z]+)/([a-z,=,_,@,0-9,A-Z]+)/([a-z,=,_,@,0-9,A-Z]+)?$ ?paginate=api&type=$1&value=$2&token=$2 [L]
+
+RewriteRule ^user/([a-z]+)/([a-z,=,_,@,0-9,A-Z]+)?$ ?paginate=$1&user=$2 [L]
+
+RewriteRule ^user/([a-z]+)/([a-z,=,_,@,0-9,A-Z]+)?$ ?paginate=$1&user=$2 [L]
+
+
+
+ 
+
+
+
+RewriteRule ^portfilo?$ ?thedir=portfilo
+
+

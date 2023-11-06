@@ -1,0 +1,112 @@
+
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^www\.nazapps\.com$
+RewriteRule ^/?$ "https\:\/\/www\.nazapps\.com\/" [R=301,L]
+
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+
+
+
+ 
+RewriteRule ^''$ ?paginate=home&routing=home
+RewriteRule ^home?$ ?paginate=home&routing=home
+RewriteRule ^postlog?$ ?paginate=apiexec&routing=home
+
+RewriteRule ^apiget/([a-z]+)/([a-z,=,_,@,0-9,A-Z]+)/([a-z,=,_,@,0-9,A-Z]+)?$ ?true=true&routing=getjson&paginate=$1&datatype=$2&id=$3 [L]
+
+RewriteRule ^admin/([a-z]+)?$ ?paginate=$1&routing=admin [L]
+
+
+
+
+RewriteRule ^user/([a-z]+)/([a-z,=,_,@,0-9,A-Z]+)?$ ?paginate=$1&user=$2 [L]
+
+
+
+
+
+
+
+
+RewriteRule ^getjson@([a-z]+)/([a-z,=,_,@,0-9,A-Z]+)?$ ?true=true&routing=getjson&action=$1&access=$2 [L]
+
+RewriteRule ^getdata@([a-z]+)@([a-z,=,_,@,0-9,A-Z]+)?$ ?true=true&routing=getjson&action=$1&access=$2 [L]
+
+
+
+RewriteRule ^exemple?([a-z]+)?$ ?true=true&routing=getjson&action=$1 [L]
+
+
+RewriteRule ^login?$ ?paginate=login
+RewriteRule ^aboutvvvs?$ ?thedir=about
+ 
+RewriteRule ^about?([a-z,0-9,A-Z]+)?$ ?thedir=about&tester=$1 [L]
+RewriteRule ^login?([a-z,0-9,A-Z]+)?$ ?thedir=login&tester=$1 [L]
+
+
+
+
+RewriteRule ^resume?$ ?thedir=resume
+RewriteRule ^works?$ ?thedir=works
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^www\.nazapps\.com$
+ 
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+
+
+
+ 
+RewriteRule ^''$ ?paginate=home&routing=home [L]
+RewriteRule ^home?$ ?paginate=home&routing=home [L]
+RewriteRule ^login?$ ?paginate=login&routing=login [L]
+
+
+RewriteRule ^admin/([a-z,=,_,-,@,0-9,A-Z]+)?$ ?paginate=$1&routing=admin [L]
+ 
+RewriteRule ^postlog?$ ?paginate=apiexec&routing=home
+RewriteRule ^admin/([a-z]+)/([a-z,=,_,@,0-9,A-Z]+)?$ ?paginate=$1&user=$2 [L]
+
+RewriteRule ^user/([a-z]+)/([a-z,=,_,@,0-9,A-Z]+)?$ ?paginate=$1&user=$2 [L]
+
+
+
+
+
+
+
+RewriteRule ^portfilo?$ ?thedir=portfilo
+RewriteRule ^blog?$ ?thedir=blogs
+
+
+
+
+
+
