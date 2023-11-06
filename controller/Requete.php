@@ -135,7 +135,7 @@ public function render_Controller($page)  {
 						
 //$appControl->runThisPAGE(); // l'execution du controller  
 													 
-		 } else{ echo 'Verifier vos controlleur : certains fichier manquent '.$page; }
+		 } else{ echo 'Verifier vos controlleur : certains fichier manquent dans ceci'.$page; }
 
 
 		 
