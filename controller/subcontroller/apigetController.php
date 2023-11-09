@@ -9,7 +9,7 @@ class apigetController extends TheAMLModel{
 
 
 	function __construct(){   }
-
+ 
   public function runThisPAGE($page,$menusTble){
 
            echo 'nazapps';
@@ -28,9 +28,6 @@ class apigetController extends TheAMLModel{
     $instance = new $dataType();
     $instance->$funcType($theconnect,$postDATA);
    
-
-     
-
 
  
           

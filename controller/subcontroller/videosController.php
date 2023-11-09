@@ -8,16 +8,26 @@ require_once 'view/admin/DefaultDesign.php';
 */
 class videosController{
 
- 
+  
 	function __construct($page,$menusTble,$allData){  
-                          
-    $this->runThisPAGE();
+                             $this->runThisPAGE();
 
    }
 
   public function runThisPAGE(){
 
-   if (isset($_SESSION['iduser'])) {   $this->runNow();  } 
+
+
+    require_once 'model/videosModel.php';
+    $videosBdd = new videosModel(); //instance de la classe du contorller encours
+   
+    $abi = $videosBdd->abilitationsAlgo(get_class());
+
+
+    $abittt = $videosBdd->checkaBILITATIONS($_SESSION['iduser'][0]['id_user'],$abi);
+     
+ 
+   if (isset($_SESSION['iduser'])) {   $this->runNow($videosBdd);  } 
    else {  header('location:  ../login');   }
    
         
@@ -36,13 +46,9 @@ class videosController{
 
 
 
-public function runNow(){
+public function runNow($videosBdd){
 
-
-      
-
-  require_once 'model/videosModel.php';
-  $videosBdd = new videosModel(); //instance de la classe du contorller encours
+ 
   $getAllvideos = $videosBdd->getAllvideos(); // methode pour recuperer des videos dans la bdd
   $stat = $videosBdd->get_statistique(); // methode pour instancier la classe statiqtique from classe parent MAIN MODEL
   $getedStat = $stat->videosStat($videosBdd->theconnect); // recupere uniquqement stat des videos das la class statistique
@@ -68,6 +74,23 @@ renderDesign($dataExec);
 
 
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         public function runDISPLAY(){

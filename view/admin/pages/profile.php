@@ -23,19 +23,56 @@ $myAbilitatyFiltered = $dataExec['myAbilitaty'];
         <div class="row gx-4">
 
           <div class="col-auto">
-            <div class="avatar avatar-xl position-relative">
+            <div class="avatar avatar-xl position-relative clickModif"
+
+
+            repository="../../"  
+                      datatest="scsjoj"   id="" 
+                      dataval= "<?php echo $userData['picture_link'];?>"
+                      datatitre="Liens d'une photo en ligne"
+                      thtable="user"
+                      functionExec ="modifyInfos"
+                      datatypeok="Users"
+                      idcol="picture_link"
+                      idrow="<?php echo $userData['id_user']; ?>" token="csjbhbsjc"
+            
+            
+            
+            >
               <img src="<?php echo($direURI); ?>/view/assets/datas/images/profile_images/mini/<?php echo $userData['picture_link'];   ?>" 
-              alt="profile_image" class="w-100 border-radius-lg shadow-sm" style="object-fit:cover;">
+              alt="profile_image" class="  border-radius-lg shadow-sm" style="object-fit:cover;" style="max-height: 50px">
             </div>
           </div> 
 
           <div class="col-auto my-auto">
             <div class="h-100">
-              <h5 class="mb-1 editableReal">
+              <h5 class="mb-1 clickModif" 
+                      repository="../../"  
+                      datatest="scsjoj"   id="" 
+                      dataval= "<?php echo $userData['FullName'];?>"
+                      datatitre="Nom complet"
+                      thtable="user"
+                      functionExec ="modifyInfos"
+                      datatypeok="Users"
+                      idcol="FullName"
+                      idrow="<?php echo $userData['id_user']; ?>" token="csjbhbsjc"
+              
+              >
                <?php echo $userData['FullName'];   ?>
               </h5>
-              <p class="mb-0 font-weight-bold text-sm"> Representé par : 
-              <?php echo $userData['FullName'];   ?>
+              <p class="mb-0 font-weight-bold text-sm clickModif"
+              
+              repository="../../"  
+                      datatest="scsjoj"   id="" 
+                      dataval= "<?php echo $userData['username'];?>"
+                      datatitre="Nom utilisateur"
+                      thtable="user"
+                      functionExec ="modifyInfos"
+                      datatypeok="Users"
+                      idcol="username"
+                      idrow="<?php echo $userData['id_user']; ?>" token="csjbhbsjc"
+                      > 
+              @ <?php echo $userData['username'];   ?>
               </p>
 
               <div class="form-check form-switch">
@@ -87,7 +124,7 @@ $myAbilitatyFiltered = $dataExec['myAbilitaty'];
                   </a>
                 </li>
      
-                <li class="nav-item" id="editorSDE" valueis="1">
+                <li class="nav-item inDever" id="editorSDE" valueis="1">
                   <a class="nav-link mb-0 px-0 py-1 "  href="<?php echo($direURI); ?>admin/editprofil/<?php echo $userData['id_user'];   ?>" role="tab" aria-selected="false">
                     <svg class="text-dark" width="16px" height="16px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                       <title>document</title>
@@ -106,7 +143,7 @@ $myAbilitatyFiltered = $dataExec['myAbilitaty'];
                     <span class="ms-1">Edition</span>
                   </a>
                 </li>
-                <li class="nav-item inDeverXX">
+                <li class="nav-item inDeverX">
                   <a class="nav-link mb-0 px-0 py-1 " data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="false">
                     <svg class="text-dark" width="16px" height="16px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                       <title>settings</title>
@@ -130,11 +167,11 @@ $myAbilitatyFiltered = $dataExec['myAbilitaty'];
 
                           id=""   
                           repository="../../" 
-                          functionExec="modifyInfos" 
+                          functionExec="resetPass" 
                           dataval=""
                           datatitre= "Taper le nouveau mot de passe"
                           thtable="user"
-                          datatypeok="Users" 
+                          datatypeok="Users"  
                           idcol="user_password"
                           idrow=<?php echo $userData['id_user']; ?> token="csjbhbsjc"
                           style="cursor:pointer" >Change pass</span>
@@ -173,7 +210,7 @@ $myAbilitatyFiltered = $dataExec['myAbilitaty'];
                     </a>
                     <h5 class="mt-3 mb-1 d-md-block d-none"> </h5></br>
                       
-                    <button class="btn bg-gradient-success " data-bs-toggle="modal" data-bs-target="#loader">Changer Categorie</button> 
+                    <button class="btn bg-gradient-success " data-bs-toggle="modal" data-bs-target="#addDATA2">Changer Categorie</button> 
                     <button class="btn bg-gradient-info addfile"  id="" keyval="AddCv">Modifier la photo</button>
                     
                     
@@ -192,7 +229,7 @@ $myAbilitatyFiltered = $dataExec['myAbilitaty'];
                               <p class="mb-0 text-xs">pour donner Acces </p>
                             </div>
                             <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">
-                                 <span type="button" class="btn btn-outline-primary btn-sm mb-0 addfileFF" data-bs-toggle="modal" data-bs-target="#addDATA2">Ajouter .+</span>
+                                 <span type="button" class="btn btn-outline-primary btn-sm mb-0 addfileFF" data-bs-toggle="modal" data-bs-target="#loader">MANAGE</span>
                             </a>
                           </li>
 
@@ -207,7 +244,7 @@ $myAbilitatyFiltered = $dataExec['myAbilitaty'];
                             </div>
                             <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">
                                  <span type="button" class="btn btn-outline-primary btn-sm mb-0" 
-                                 data-bs-toggle="modal" data-bs-target="#addDATAxxxxx">Voir tout</span>
+                                 data-bs-toggle="modal" data-bs-target="#addDATAxxxxx">MANAGE</span>
 
                             </a>
                           </li>
@@ -243,66 +280,19 @@ $myAbilitatyFiltered = $dataExec['myAbilitaty'];
  
  
 <div class="col-12 col-xl-8">
-<div class="card h-100">
- <table class="table align-items-center mb-0">
-<tbody>
-<?php 
+<div class="card h-100" style="justify-content:end">
+  
+<div class="chart" style="poistion:absolute;bottom:0;  bottom:0;left:0">
+
+
+
  
-                    $toDisplay = array(
-
-                    array("Nom",$userData['FullName'],'FullName'),
-                    array("Numero ",$userData['username'],'username'),
-                    array("	picture_link ",$userData['picture_link'],'picture_link'),
-                    array("Description ",$userData['FullName'],'phone'),
-                     
-                    
-
-                    );
-
-
-                    foreach ($toDisplay as $key => $value) {
-   
- 
-                     ?>
-                    <tr >
-                      <td> 
-                        <div class="d-flex px-2 py-1" style="margin: 10px;">
-                          <div>
-                            <img src="<?php echo($direURI); ?>view/assets/datas/images/icons/infos.png" class="avatar avatar-sm me-3" alt="user1">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center" >
-                            <h6 class="mb-0"><?php echo $value[0];   ?></h6> 
-                            <p class="text-xs text-secondary mb-0" > <?php echo $value[1];   ?> </p>
-                          </div> 
-                        </div> 
-                      </td>
-
-                     <td class="align-middle text-center text-sm">
-                      <button 
-                      repository="../../"  
-                      datatest="scsjoj" class="btn bg-gradient-info clickModif"  id="" 
-                      dataval= "<?php echo $value[1];?>"
-                      datatitre="<?php echo $value[0];?>"
-                      thtable="user"
-                      functionExec ="modifyInfos"
-                      datatypeok="Users"
-                      idcol="<?php echo $value[2];?>"
-                      idrow="<?php echo $userData['id_user']; ?>" token="csjbhbsjc">Modifier</button>
-                      </td>
-                 </tr> 
-              <?php   } ?>
-
-
-              
-
-             
 
 
 
 
-
-             </tbody>
-          </table>
+                <canvas id="chart-liness" class="chart-canvas" height="500"></canvas>
+              </div>
  </div>
 </div>
 </div>
@@ -325,7 +315,7 @@ id="themodifiermodal" data-bs-toggle="modal" data-bs-target="#themodifier">Modif
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Liste des réalisations</h6>
+              <h6>Historique de l'utilisateurs</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -409,7 +399,7 @@ id="themodifiermodal" data-bs-toggle="modal" data-bs-target="#themodifier">Modif
        data-bs-toggle="modal" data-bs-target="#addDATA2">Ajouter une activite</button>
 
 
-       <button  style="display:" type="button" class="btn bg-gradient-secondary" data-bs-toggle="modal" data-bs-target="#pdfModal" id="showPdfMODAL">Close</button> 
+       <button  style="display:none" type="button" class="btn bg-gradient-secondary" data-bs-toggle="modal" data-bs-target="#pdfModal" id="showPdfMODAL">Close</button> 
  
 
                 
@@ -613,7 +603,7 @@ id="themodifiermodal" data-bs-toggle="modal" data-bs-target="#themodifier">Modif
 
 
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ajouter à</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Gestionnaire d'Abilitations </h5>
                     <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">×</span>
                     </button>
@@ -809,6 +799,9 @@ id="themodifiermodal" data-bs-toggle="modal" data-bs-target="#themodifier">Modif
       </div>
    </div>
  </div>
+
+
+
 
 
 

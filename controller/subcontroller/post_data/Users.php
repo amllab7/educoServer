@@ -34,6 +34,7 @@ class Users extends adminerModel{
 
    public function modifyInfos($dataPost) {
  
+     
 
     $adminerBdd = new adminerModel(); //instance de la classe du contorller encours
     $setdata = $adminerBdd->editSingleDATA($dataPost); // methode pour  
@@ -46,6 +47,66 @@ class Users extends adminerModel{
 
 
               
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public function addNewuser($dataPost) {
+ 
+  
+
+          $adminerBdd = new adminerModel(); //instance de la classe du contorller encours
+          $setdata = $adminerBdd->setThisUser($dataPost); // methode pour  
+          if ($setdata) { echo('video mis ajour'); }
+         
+            
+                 
+      
+              }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public function resetPass($dataPost) {
+ 
+   //Nous prevoyons mettre un bon algoritme de cryptage de mot de pass ici pour augmenter la securité
+   // $2y$10$XVm1gksuO8QFmROmF1G1aO6ItP4iFuXc7ZSbwTo/J1PModUxqpIx2
+
+
+   
+     $dataPost['dataval'] = password_hash($dataPost['dataval'], PASSWORD_DEFAULT);    // cryptage de mot de passe 
+     $adminerBdd = new adminerModel(); //instance de la classe du contorller encours
+     $setdata = $adminerBdd->editSingleDATA($dataPost); // methode pour  
+     if ($setdata) { echo ('Pass crypté avec sucee'); }
+   
+     }
+
+
+
+
+
 
 
     

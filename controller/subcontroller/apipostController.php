@@ -50,9 +50,13 @@ public function runNow(){
     $dataType = $postDATA['datatype']; 
     $funcType = $postDATA['funcExec'];   
    
+
+  
+
  
   require_once 'controller/subcontroller/post_data/'.$dataType.'.php';
   $instance = new $dataType();
+ 
   $instance->$funcType($postDATA);
 
  

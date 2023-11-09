@@ -1,11 +1,13 @@
 <?php 
 
-//require_once 'controller/mainController.php';
+//require_once 'controller/mainController.php' faiseur de monde;
 require_once 'view/admin/DefaultDesign.php';
 
 /**
 * 
 */
+
+
 class profileController{
 
  
@@ -42,13 +44,21 @@ public function runNow(){
 
 
  
-
+ 
 
       
   $geter = array_merge($_GET,$_POST) ;
   require_once 'model/profileModel.php';
   $profileBdd = new profileModel(); //instance de la classe du contorller encours
-  $userinfos = $profileBdd->getInfosUSER($geter['user']); // methode pour recuperer des videos dans la bdd
+  $userinfos = $profileBdd->getInfosUSER($geter['user']); // methode pour recuperer 
+
+  if (empty($userinfos)) {
+    echo "Eviter des modifier des urls";
+    return false;
+    
+  } 
+
+
   $abilitations = $profileBdd->getAllabilitations(); // methode pour recuperer des videos dans la bdd
   $myAbilitaty = $profileBdd->getmyAbilitaty($geter['user']); // methode pour recuperer des videos dans la bdd
   $myAbilitatyFiltered = array();

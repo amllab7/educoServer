@@ -24,6 +24,26 @@ class apiModel extends MainModel{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
        public function getAllBooks(){
 
 
@@ -158,7 +178,7 @@ return array('count'=> $userCount,'data'=> $dataFromGETTER);
 
 
 
-
+ 
 
 
 
@@ -307,7 +327,15 @@ return array('count'=> $userCount,'data'=> $dataFromGETTER);
 
 
 
+   public function setTrack($dataFrom){
 
+
+    //$reqER = $this->theconnect->prepare('INSERT INTO trackingData () VALUES(?)');
+    //$reqER->execute(array());
+    return "Tracking finish - data is setted";
+       
+       
+       }
 
 
 

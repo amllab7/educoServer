@@ -20,13 +20,13 @@ class adminerModel extends MainModel{
 
 
 
-        public function getInfosUSER($mail,$pass){
+        public function getInfosUSER($mail){
 
 
 
-            $dataFrom = $this->theconnect->prepare('SELECT * FROM  user WHERE 	username = ? AND user_password = ?');
-            $dataFrom->execute(array($mail,$pass));
-            $dataFromGETTER = $dataFrom->fetchAll();
+            $dataFrom = $this->theconnect->prepare('SELECT * FROM  user WHERE 	username = ?');
+            $dataFrom->execute(array($mail));
+            $dataFromGETTER = $dataFrom->fetchAll(PDO::FETCH_ASSOC);
             $userCount = $dataFrom->rowCount();
         
             return array('count'=> $userCount,'data'=> $dataFromGETTER);
@@ -77,13 +77,7 @@ class adminerModel extends MainModel{
             $modif = "UPDATE user SET $colonne = ? WHERE id_user = ?";
             $luMsg = $this->theconnect->prepare($modif);
             $luMsg->execute($execute);
-       
-       
-       
-       
-       
-            
-       
+        
             if($colonne=='picture_link'){
        
                  isPictureExternal(1,$connexion,$idrow);
@@ -112,11 +106,12 @@ class adminerModel extends MainModel{
         $id_userAb = $dataPost['idrow'];
         $id_Abilitation = $dataPost['dataval'];
         $id_colonne = $dataPost['colonne'];
+        $creationDate = time();
         
    
-        $modif = "UPDATE ability_access SET isValid_abilitation = ? WHERE id_userAb = ? AND id_Abilitation = ?";
+        $modif = "UPDATE ability_access SET isValid_abilitation = ?, dataabilititation = ? WHERE id_userAb = ? AND id_Abilitation = ?";
         $luMsg = $this->theconnect->prepare($modif);
-        $luMsg->execute(array($isValid_abilitation,$id_userAb,$id_Abilitation));
+        $luMsg->execute(array($isValid_abilitation,$creationDate,$id_userAb,$id_Abilitation));
         echo 'suceeeeeeeeeed';
    
    
@@ -157,10 +152,38 @@ public function thenewAbilitation($dataPost){
     $id_Abilitation = $dataPost['dataval'];
     $isValid_abilitation = 1;
     
-    $creationDate = date('d/m/y');
+    $creationDate = time();
     
-    $reqER = $this->theconnect->prepare('INSERT INTO  ability_access(id_userAb,id_Abilitation,isValid_abilitation) VALUES(?,?,?)');
-    $reqER->execute(array($id_userAb,$id_Abilitation,$isValid_abilitation));
+    $reqER = $this->theconnect->prepare('INSERT INTO  ability_access(id_userAb,id_Abilitation,isValid_abilitation,dataabilititation) VALUES(?,?,?,?)');
+    $reqER->execute(array($id_userAb,$id_Abilitation,$isValid_abilitation,$creationDate));
+
+
+     // $req = "UPDATE  user SET username = ? WHERE id = ?";
+    //$thereq = $connexion->prepare($req);
+   // $thereq->execute(array($mail,5));
+    echo "success - donnee inseré avec success";
+
+ 
+  
+}
+
+
+
+
+
+
+
+public function setThisUser($dataPost){
+ 
+    $FullName = $dataPost['nomcomplet'];  
+    $username = $dataPost['telephone'];
+    $user_password = password_hash("12345", PASSWORD_DEFAULT); 
+    
+    
+    $registeredon = time();
+    
+    $reqER = $this->theconnect->prepare('INSERT INTO  user(username,user_password,FullName,registeredon) VALUES(?,?,?,?)');
+    $reqER->execute(array($username,$user_password,$FullName,$registeredon));
 
 
      // $req = "UPDATE  user SET username = ? WHERE id = ?";
@@ -185,8 +208,7 @@ public function thenewAbilitation($dataPost){
 
 
 
-
-
+ 
 public function isPictureExternaler($isthis,$idrow){
 
  

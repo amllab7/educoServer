@@ -42,8 +42,54 @@ class apiController{
 
 
  
+
+
+
+
+
+
+ 
+public function logonApi($instanceModel){
+
+
+  $appdata = array();
+  var_dump('lgon');
+  return false;
+
+
+}
+  
+
+
+
+
+
+
+public function trackingData($instanceModel){
+
+  $postDATA = array_merge($_GET,$_POST);  
+  $setTrack =  $instanceModel->setTrack($postDATA);
+ //echo $setTrack;
+
+
  
 
+
+  //$getTrack = file_get_contents("view/datafiles/json/andre.json", true);
+  $getTrack = file_get_contents("view/datafiles/json/bigData.json", true);
+
+  $bigData = array();
+  for ($i=0; $i < 2; $i++) { 
+   array_push($bigData,$getTrack);
+  }
+ 
+
+  echo (($getTrack));
+  //var_dump(json_decode($getTrack));
+
+  //file_put_contents("view/datafiles/json/bigData.json",json_encode($bigData));
+
+}
  
 
 
@@ -54,7 +100,7 @@ public function rechercherbook($instanceModel){
 
 $postDATA = array_merge($_GET,$_POST) ;  
 $getResult =  $instanceModel->execRechercheBooks($postDATA);
-
+ 
 
 //echo  $getResult["count"];
 $filterSearch = array();
@@ -203,7 +249,6 @@ $filterDataBooks = array();
   foreach ($getAllVideos["data"] as $key => $value) {
 
      // $filterDataLOCAL = array("id"=>$value["id_book"], "nom"=>$value["titre_book"],"resume_book"=>$value["resume_book"],"imageCover"=>$value["coverpicture_book"]);
-
      $filterDataLOCAL = array($value["id_vid"],$value["titre_vid"],
      $value["description_vid"],$value["hostid_vid"]);
      
@@ -213,7 +258,7 @@ $filterDataBooks = array();
    }
 
 
-
+  
  
 
    
@@ -271,7 +316,7 @@ $filterDataBooks = array();
 
 
    $keyGpt = "";
-
+   $aboutApp = "";
 
 
 
@@ -280,11 +325,11 @@ $filterDataBooks = array();
    $dataMessage = array("Infos de l'application","Infos de l application 2","Bientot nous comptons Integrer 
    l'intelligence Artificiele avec laquelle vous pouvez echager; poser des questions et obtenir des réponses 
    à vos questions comme un hummain. nous comptons sur la contribution de chacun pour finir le devellopement 
-   de cette technologie");
+   de cette technologie",$keyGpt);
 
 
    $allData = array($filterDataBooks,$filterDataVideos,$getLiveVideoFilter,$filterDataCategorie,$filteredAllDatatMessage,$randomAI,$filterDataBooks);
-  echo  json_encode($allData); 
+  echo  json_encode($filteredAllDatatMessage); 
 
 
 }

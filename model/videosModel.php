@@ -11,10 +11,12 @@ class videosModel extends MainModel{
     function __construct(){
         $this->theconnect = $this->connectBDD();
 
+      
+
         }
 
 
-
+ 
 
 
 
