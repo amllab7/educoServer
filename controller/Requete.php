@@ -123,6 +123,9 @@
  
 
 public function render_Controller($page)  {  
+
+
+ 
      
 	     $controllerPage = strtolower($page).'Controller';
 		 $checkController = $this->checkController($controllerPage.'.php');   

@@ -1,4 +1,17 @@
 <?php 
+
+
+/*
+
+aml.laboratory
+_VDmAi3z5JZmXC@
+
+u620531974_educo777
+
+u620531974_educodb
+
+
+*/
 $db_Public = array(	
 'db_User'=> 'root',
 'db_Pass'=> '',

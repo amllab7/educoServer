@@ -145,14 +145,7 @@ $alluser = $dataExec['getAlluser'];
 
 
 
-            
-
-            
-
-
-
-
-
+             
             
 
 

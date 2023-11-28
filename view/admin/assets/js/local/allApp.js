@@ -642,7 +642,7 @@ $(".editableReal").dblclick(function(e){
       function execthemodifier(url) {
 
         
-
+        alert(url); 
  
           $.ajax({ 
           url :  url,

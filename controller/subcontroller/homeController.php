@@ -12,21 +12,32 @@ require_once 'view/DefaultDesign.php';
 class homeController extends TheAMLModel{
 
 
-	function __construct(){   }
-          public function runThisPAGE($modeler){
+	function __construct(){  
+
+
+                $this->runThisPAGE();
+
+         }
+ 
+
+
+
+
+          public function runThisPAGE(){
 
             
           $configs = require 'configs/configV1.php'; // data base configuration
           $theconnect = $this->bddInitiate($configs['db_Public']); // data base connexion
         
-          require_once 'model/fetch/homeModel.php'; // require of model file 
+          //require_once 'model/fetch/homeModel.php'; // require of model file 
 
           //$access = new Abilitations();
           //$access->runAccess('homeController','userHome',1);
 
           
           
-           
+           echo ("UNDER DEV");
+           return false;
           
          
            $getAlluser =  getAlluser($theconnect);

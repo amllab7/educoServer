@@ -1,7 +1,7 @@
 <?php
 
 
-require_once 'model/mainModel.php';
+require_once 'model/MainModel.php';
 class videosModel extends MainModel{
 
     public $theconnect;
