@@ -51,6 +51,8 @@ class apiController{
  
 public function logonApi($instanceModel){
 
+var_dump('lgon');
+  return false;
 
   $appdata = array();
   var_dump('lgon');
@@ -71,8 +73,10 @@ public function trackingData($instanceModel){
   $setTrack =  $instanceModel->setTrack($postDATA);
  //echo $setTrack;
 
+  file_put_contents("view/datafiles/json/bigData.json",json_encode($postDATA));
 
- 
+ var_dump($postDATA);
+ return false;
 
 
   //$getTrack = file_get_contents("view/datafiles/json/andre.json", true);
@@ -329,7 +333,7 @@ $filterDataBooks = array();
 
 
    $allData = array($filterDataBooks,$filterDataVideos,$getLiveVideoFilter,$filterDataCategorie,$filteredAllDatatMessage,$randomAI,$filterDataBooks);
-  echo  json_encode($filteredAllDatatMessage); 
+  echo  json_encode($allData); 
 
 
 }

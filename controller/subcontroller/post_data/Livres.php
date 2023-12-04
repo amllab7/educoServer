@@ -22,12 +22,13 @@ class Livres extends livresModel{
  
     
   public function thenewlivre($dataPost){
-
+    $dataPost = array_merge($_GET,$_POST);
 
 
     $booknew = new livresModel(); //instance de la classe du contorller encours
-    $setdata = true; //$booknew->addbookBdd($dataPost); // methode pour  
-    if ($setdata) { echo('livre ajouté'); }
+    $booknew->addbookBdd($dataPost); // methode pour  
+    
+    if ($booknew) { echo('livre ajouté'); }
 
 
 

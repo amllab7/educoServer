@@ -211,6 +211,17 @@ $alluser = $dataExec['getAlluser'];
                             >  <?php echo $value['titre_vid'];   ?>  </h6>
 
                             <p class="text-xs text-secondary mb-0 dblclickModif"
+                            id=""   
+                          repository="../"  
+                          functionExec="updatevideo" 
+                          dataval="<?php echo $value['titre_vid'];   ?>"
+                          datatypeok="videos"
+                          datatitre= "Taper le nom"
+                          thtable="videos"
+                          idcol="hostid_vid"
+                          idrow="<?php echo $value['id_vid']; ?>" token="csjbhbsjc" 
+                          style="cursor:pointer"
+
                             > <?php echo $value['hostid_vid'];   ?> </p>
                            <p class="text-xs text-secondary mb-0"><?php// echo $value['id_user'];   ?></p>
                           </div> 
