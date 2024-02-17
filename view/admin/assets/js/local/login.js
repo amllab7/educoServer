@@ -1,19 +1,11 @@
- $("#loginNOW").submit(function(e){ 
+ $("#loginForm").submit(function(e){ 
                e.preventDefault();
-               
                theLOGIN.initiate(this);
                
             });
  
-$("#logoutNOW").click(function(e){ 
-    e.preventDefault();
-    var directo =  $(this).attr('directo');
-    theLOGOUT.logout(directo+'logout');
-});
 
-
-
-
+ 
 var theLOGIN = {
 
 
@@ -21,15 +13,14 @@ var theLOGIN = {
     initiate : function(that){
        
  
-               var mailORphone = $("#mailINPUT").val();
-               var passWord = $("#passINPUT").val();
-               var token = $("#tokenINPUT").val();
-               var verif = this.verify_login_infos(mailORphone,passWord,token);
-
+               var usernameFallaGo = $("#username_FallaGo").val();
+               var passWordFallaGo = $("#pass_FallaGo").val();
                
-               if(verif.statut===true) { this.execute_login(that); } 
+               var token = '';
+               var verif = this.verify_login_infos(usernameFallaGo,passWordFallaGo);
+               if (verif.statut===true) { this.execute_login(that);  } 
+               else{  swal("IMPOSSIBLE ","Verifier si vous aviez remplie vos informations"); }
 
-                 else{  swal("IMPOSSIBLE ","Verifier si vous aviez remplie vos informations"); }
 
     },
 
@@ -60,14 +51,14 @@ var theLOGIN = {
 
 
  
-
+ 
  
 
     execute_login : function (form) {
       
                              
                         $.ajax({
-                            url:"postlog",  
+                            url:"gologin",  
                             method:"POST",
                             data:new FormData(form),
                             contentType:false,
@@ -110,6 +101,39 @@ var theLOGIN = {
   
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+       logout: function (url) {
+
+
+        
+        $.ajax({
+            url : url,type : 'GET',
+            success : function(respondObject,statut){
+                
+                swal("Déconnecté", respondObject, "success").then((value) => {
+                    location.reload();
+                    
+                });
+            
+            },
+            error : function(resultat,statut,erreur){ swal("Attention!", "Impossible de terminer la requete", "error");  },
+            complete : function(resultat, statut){    }
+            
+        });
+},
+
    
 
  
@@ -120,7 +144,81 @@ var theLOGIN = {
  
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
+
+$("#logoutNOW").click(function(e){ 
+    e.preventDefault();
+    var directo =  $(this).attr('directo');
+
+    alert(5555);
+    //theLOGIN.logout(directo+'logout');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -132,25 +230,7 @@ var theLOGIN = {
 
 var theLOGOUT = {
 
-    logout: function (url) {
 
-
-        
-                $.ajax({
-                    url : url,type : 'GET',
-                    success : function(respondObject,statut){
-                        
-                        swal("Déconnecté", respondObject, "success").then((value) => {
-                            location.reload();
-                            
-                        });
-                    
-                    },
-                    error : function(resultat,statut,erreur){ swal("Attention!", "Impossible de terminer la requete", "error");  },
-                    complete : function(resultat, statut){    }
-                    
-                });
-      },
 
 
        

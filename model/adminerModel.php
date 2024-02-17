@@ -23,7 +23,7 @@ class adminerModel extends MainModel{
         public function getInfosUSER($mail){
 
 
-
+ 
             $dataFrom = $this->theconnect->prepare('SELECT * FROM  user WHERE 	username = ?');
             $dataFrom->execute(array($mail));
             $dataFromGETTER = $dataFrom->fetchAll(PDO::FETCH_ASSOC);

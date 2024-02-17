@@ -22,44 +22,24 @@ class deconnexionController{
     
     
     
-
  
-
-
-
- 
- 
-
-
-
-
 public function runNow(){
 
-
+  session_destroy();
+    echo ("Vous venez d'etre déconnecté du systeme");
   if (isset($_SERVER['HTTP_REFERER'])) {
                      
     session_destroy();
     echo ("Vous venez d'etre déconnecté du systeme");
   } else{
 
-    echo ('Impossible de realiser cet action');
+    echo ('Impossible de realiser cet action de cette facon - utiliser l interface de l application');
   }
 
 }
 
 
 
-
-
  
-
- 
-    
-    
-    
-        
-
-
-
 
 }

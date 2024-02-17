@@ -8,15 +8,23 @@ require_once 'view/admin/DefaultDesign.php';
 */
 class loginController{
 
+
+
+
+
+
+
  
 	function __construct($page,$menusTble,$allData){  
-                          
-    $this->runThisPAGE();
+                           
+                             $this->runThisPAGE();
 
    }
 
+ 
+
   public function runThisPAGE(){
-    $this->runNow();
+                  $this->runNow();
         
         }
     

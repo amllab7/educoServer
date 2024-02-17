@@ -1,12 +1,12 @@
-       <!-- 
+     
                         <div class="container position-sticky z-index-sticky top-0">
                           <div class="row">
                             <div class="col-12">
-                                Navbar 
+                               
                               <nav class="navbar navbar-expand-lg blur blur-rounded top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
                                 <div class="container-fluid pe-0">
                                   <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="../pages/dashboard.html">
-                                  Freelanco
+                                  Educo
                                   </a>
                                   <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon mt-2">
@@ -20,19 +20,19 @@
                                       
                                     </ul>
                                     
-                                    < ul class="navbar-nav d-lg-block d-none">
+                                    <ul class="navbar-nav d-lg-block d-none">
                                       <li class="nav-item">
-                                        <a href="https://www.creative-tim.com/product/soft-ui-dashboard" class="btn btn-sm btn-round mb-0 me-1 bg-gradient-dark">EXPLORER</a>
+                                        <a href="" class="btn btn-sm btn-round mb-0 me-1 bg-gradient-dark">EXPLORER</a>
                                       </li>
                                     </ul>
                                   </div>
                                 </div>
                               </nav>
-                              End Navbar  
+                              
                             </div>
                           </div>
                         </div>
-      -->
+     
 
  
   
@@ -48,20 +48,22 @@
                   <img src="<?php echo($direURI); ?>view/admin/assets/img/theLOGO.png" class="navbar-brand-img h-150" alt=" logo" style="max-height:150px" >
         
                   <p class="mb-0">Entrez vos informations pour vous connecter</p>
-
-                  
-  
-                   
+      
                 </div>
                 <div class="card-body">
-                  <form role="form" id="loginNOW">
+
+
+
+
+
+                  <form role="form" id="loginForm">
                     <label>Email</label>
                     <div class="mb-3">
-                      <input id="mailINPUT" type="phone" name="mailIS" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                      <input id="username_FallaGo" type="phone" name="username_FallaGo" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
                     </div>
                     <label>Password</label>
                     <div class="mb-3">
-                      <input id="passINPUT" type="Password" name="passIS" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                      <input id="pass_FallaGo" type="Password" name="pass_FallaGo" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
                     </div>
                     <div class="form-check form-switch">
                       <input class="form-check-input" name="checkIS" type="checkbox" id="rememberMe" NOchecke>
@@ -71,7 +73,7 @@
                       <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0" id="forSubmit" >CONNEXION</button>
 
   
-                      <button class="btn btn-primary  w-100 mt-4 mb-0" type="button" disabled style="display: none" id="formIsload">
+                       <button class="btn btn-primary  w-100 mt-4 mb-0" type="button" disabled style="display: none" id="formIsload">
                             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                             <span class="sr-only">Loading...</span>
                        </button>
@@ -79,6 +81,10 @@
 
                     </div>
                   </form>
+
+
+
+
                 </div>
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-4 text-sm mx-auto">

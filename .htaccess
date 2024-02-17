@@ -38,6 +38,7 @@ RewriteRule ^resetApp?$ ?paginate=resetApp&routing=resetApp [L]
 RewriteRule ^admin/([a-z,=,_,-,@,0-9,A-Z]+)?$ ?paginate=$1&routing=admin [L]
  
 RewriteRule ^postlog?$ ?paginate=apiexec&routing=home
+RewriteRule ^gologin?$ ?paginate=tologin&routing=home
 RewriteRule ^logout?$ ?paginate=deconnexion&routing=deconnexion [L]
 RewriteRule ^admin/([a-z]+)/([a-z,=,_,@,0-9,A-Z]+)?$ ?paginate=$1&user=$2 [L]
 

@@ -210,7 +210,7 @@ function autoloaderThis($dataExec, $direURI){
         </div>
       </div>
       <a class="btn bg-gradient-primary mt-3 w-100 " id="logoutNOW" href="#" directo="<?php echo($direURI); ?>">Deconnexion</a>
-    </div>
+    </div> 
   </aside>
 
 

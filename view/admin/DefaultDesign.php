@@ -59,15 +59,12 @@ function renderDesign($dataExec){
         if($dataExec['type']){
 
               require "view/admin/autoload.php"; 
-              ///autoloaderThis($page,$dataGeted,$getInfosIDO,$getInfosUSER); 
+             
               autoloaderThis($dataExec,$direURI);
           
           }
-
-              
-              else{  
-                  
-                  require "view/admin/pages/login.php";
+          else{  
+                require "view/admin/pages/login.php";
               
               }
          ?>
